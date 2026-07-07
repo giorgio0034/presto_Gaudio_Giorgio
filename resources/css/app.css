@@ -1,9 +1,15 @@
-@import 'tailwindcss';
+@import 'bootstrap';
+@import './masthead.css';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+body{
+
+    background-color:antiquewhite
+}
+
+footer{
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: flex-end;   /* Spinge in basso */
+  height: 100vh;           /* Occupa tutta l'altezza dello schermo (esempio) */
 }
