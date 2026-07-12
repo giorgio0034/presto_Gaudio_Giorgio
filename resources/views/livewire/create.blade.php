@@ -41,7 +41,7 @@
 
                 <div class="mb-3">
                     <label>Prezzo</label>
-                    <input type="text" class="form-control" wire:model="price" id="price">
+                    <input type="text" class="form-control" wire:model="price" id="price" value="{{ old('price') }}">
                 </div>
 
                 <div class="mb-3">
@@ -57,6 +57,16 @@
                     <option value="{{ $category->id }}">"{{ $category->name }}"</option>
                     @endforeach
                 </select>
+
+
+
+
+
+
+
+
+
+
 
                 <button type="submit" class="btn btn-primary">
                     Submit

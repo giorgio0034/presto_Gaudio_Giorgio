@@ -14,6 +14,33 @@
 
 
 
+<div class="container">
+    <div class="row">
+        @forelse($ads as $ad)
+        <div class="col-12 col-md-3 mb-4">
+
+            <livewire:card :ad="$ad" />
+
+        </div>
+            @empty
+            <h3 class="text-center">
+                Non sono stati creati articoli
+            </h3>
+
+            @endforelse
+    </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
 
 
 <x-footer />

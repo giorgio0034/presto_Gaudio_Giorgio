@@ -9,7 +9,15 @@ body{
 
 footer{
   display: flex;
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: flex-end;   /* Spinge in basso */
-  height: 100vh;           /* Occupa tutta l'altezza dello schermo (esempio) */
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
 }
+
+
+.height-custom{
+    min-height:400px;
+    max-width:800px;
+    margin: 0 auto;
+}
+

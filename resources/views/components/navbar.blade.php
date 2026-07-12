@@ -12,7 +12,7 @@
           <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">I miei annunci</a>
+          <a class="nav-link" href="{{ route('ad.index') }}">I miei annunci</a>
         </li>
        @guest
         <li class="nav-item">
@@ -28,6 +28,20 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Benvenut*{{ Auth::user()->name }}</a>
         </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorie
+          </a>
+          <ul class="dropdown-menu">
+            @foreach($categories as $category)
+            <li><a class="dropdown-item"  href="{{ route('ad.byCategory',['category'=>$category->id]) }}">{{ $category->name }}</a>
+            </li>
+            @if(!$loop->last)
+            <hr class="dropdown-divider">
+            @endif
+            @endforeach
+          </ul>
+        </li>
         <li class="nav-item">
           <form  action="{{ route('logout') }}"
            method="POST">
@@ -40,7 +54,7 @@
         </li>
     </ul>
 
-<a href= "{{ route('ads.create') }}"class="btn btn-secondary">Inserisci Annuncio</a>
+<a href= "{{ route('ad.create') }}"class="btn btn-secondary">Inserisci Annuncio</a>
 @endauth
     </div>
   </div>

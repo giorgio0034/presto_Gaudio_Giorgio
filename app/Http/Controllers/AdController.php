@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ad;
+use App\Models\Category;
+use Illuminate\Container\Attributes\Tag;
 use Illuminate\Http\Request;
 
 class AdController extends Controller
 {
 
 public function create(){
-    return view('ads.create');
+    return view('ad.create');
 }
 
 
@@ -36,13 +38,21 @@ dd($request->all());
 }
 
 
-/*
+
     public function index()
     {
-        $ads = Ad::all();// Mi recupera dal DB tutti gli articoli e li salva in una collezione
-        return view('ad.index', compact('ad')
 
-        );
+
+        $ads=Ad::orderBy('created_at','desc')->paginate(6);
+        return view('ad.index', compact('ads'));
+    }
+
+    public function show(Ad $ad){
+        return view('ad.show', compact('ad'));
+    }
+
+    public function byCategory(Category $category){
+        return view('ad.byCategory',['ads'=> $category->ads,'category'=> $category]);
     }
 
     /**

@@ -18,6 +18,7 @@ public $description;
 public $price;
 #[Validate('required')]
 public $category;
+public $ad;
 
 
 public function store(){
@@ -36,7 +37,8 @@ public function store(){
         'title'=>$this->title,
         'description'=>$this->description,
         'price'=>$this->price,
-        'category'=>$this->category,
+        'category_id'=>$this->category,
+        'user_id' => Auth::id()
 
     ]);
 

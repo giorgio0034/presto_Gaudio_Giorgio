@@ -16,7 +16,9 @@ Route::get('/',[PublicController::class,'home'])->name('home');
 //AdsController
 
 
-Route::get('/ads/create',[AdController::class,'create'])->name('ads.create')->middleware('auth');
-Route::get('/ads/store',[AdController::class,'store'])->name('ads.store')->middleware('auth');
-Route::get('/ads/index',[AdController::class,'index'])->name('ads.index')->middleware('auth');
+Route::get('/ad/create',[AdController::class,'create'])->name('ad.create')->middleware('auth');
+Route::post('/ad/store',[AdController::class,'store'])->name('ad.store')->middleware('auth');
+Route::get('/ad/index',[AdController::class,'index'])->name('ad.index')->middleware('auth');
 
+Route::get('/show/ad/{ad}',[AdController::class,'show'])->name('ad.show')->middleware('auth');
+Route::get('/category/{category}',[AdController::class,'byCategory'])->name('ad.byCategory');

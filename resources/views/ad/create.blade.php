@@ -4,7 +4,7 @@
 
 <livewire:create />
 
-<x-footer />
+
 
 
 
