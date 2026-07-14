@@ -25,10 +25,11 @@
 
         @auth
 
+
         <li class="nav-item">
           <a class="nav-link" href="#">Benvenut*{{ Auth::user()->name }}</a>
         </li>
-                <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </a>
@@ -40,8 +41,10 @@
             <hr class="dropdown-divider">
             @endif
             @endforeach
+
           </ul>
         </li>
+
         <li class="nav-item">
           <form  action="{{ route('logout') }}"
            method="POST">

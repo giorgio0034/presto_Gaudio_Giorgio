@@ -1,23 +1,39 @@
 <x-layout>
 
-<x-masthead title="PRESTO" />
+{{-- <x-masthead title="PRESTO" /> --}}
 
 
-
-    <main class="container my-5">
+{{--   <header class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-6">
-            <h2 class="text-center">BENVENUTO NEL SITO DI ANNUNCI</h2>
+            <h2 class="text-center"></h2>
         </div>
     </div>
-</main>
+</header>
+  --}}
+
+  <header>
+        <div class="container">
+            <div class="row d-flex justify-content-left">
+                <div class="col-12 col-md-6">
+                    <h1 class="titolo mt-5">Benvenuto nel sito di annunci</h1>
+                </div>
+
+            </div>
+
+        </div>
 
 
 
-<div class="container">
-    <div class="row">
+  </header>
+
+
+
+<main class="container mt-5">
+    <div class="row ">
+        <h1 class="text-center ">Tutti gli annunci</h1>
         @forelse($ads as $ad)
-        <div class="col-12 col-md-3 mb-4">
+        <div class="col-12 col-md-3 mb-4 my-5">
 
             <livewire:card :ad="$ad" />
 
@@ -29,7 +45,7 @@
 
             @endforelse
     </div>
-</div>
+</main>
 
 
 

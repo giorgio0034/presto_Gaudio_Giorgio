@@ -1,23 +1,5 @@
 @import 'bootstrap';
 @import './masthead.css';
+@import'./style.css';
 
-
-body{
-
-    background-color:antiquewhite
-}
-
-footer{
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 100vh;
-}
-
-
-.height-custom{
-    min-height:400px;
-    max-width:800px;
-    margin: 0 auto;
-}
 

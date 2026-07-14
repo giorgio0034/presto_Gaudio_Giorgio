@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+body{
+
+    background-color:antiquewhite
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+}
+
+ /*
+.height-custom{
+    min-height:400px;
+    max-width:800px;
+    margin: 0 auto;
+}
+*/
+
+header{
+    height: 500px;
+    background-image: url(/public/sfondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.titolo {
+ color: white;
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+  transition: all 1.5s ease-in-out; /* Transizione su colore e dimensioni */
+   animation: comparsa 1s ease forwards;
+    animation-delay: 3s;
+     animation-fill-mode: both;
+  padding-top: 200px; /* distanza dal bordo sinistro */
+  transform: translateY(-50%);
+
+
+
+
+
+
+}
+
+
+
+@keyframes comparsa {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
