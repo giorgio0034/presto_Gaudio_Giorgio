@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ad;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class PublicController extends Controller
 {
@@ -12,9 +14,11 @@ class PublicController extends Controller
 
 public function home(){
 
-        $ads=Ad::take(6)->orderBy('created_at','desc')->get();
+        $ads=Ad::where('is_accepted',true)->orderBy('created_at','desc')->take(6)->get();
         return view('welcome', compact('ads'));
     }
+
+
 
 
     }

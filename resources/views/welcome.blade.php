@@ -12,6 +12,19 @@
 </header>
   --}}
 
+
+@if (session()->has('errorMessage'))
+    <div class="alert alert-success text-center shadow rounded w-50">
+        {{ session('errorMessage') }}
+    </div>
+@endif
+
+@if (session()->has('message'))
+    <div class="alert alert-success text-center shadow rounded w-50">
+        {{ session('message') }}
+    </div>
+@endif
+
   <header>
         <div class="container">
             <div class="row d-flex justify-content-left">
@@ -31,7 +44,7 @@
 
 <main class="container mt-5">
     <div class="row ">
-        <h1 class="text-center ">Tutti gli annunci</h1>
+        <h1 class="display-4 text-center">TUTTI GLI ANNUNCI</h1>
         @forelse($ads as $ad)
         <div class="col-12 col-md-3 mb-4 my-5">
 

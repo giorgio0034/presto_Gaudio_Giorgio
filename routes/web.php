@@ -24,4 +24,10 @@ Route::get('/ad/index',[AdController::class,'index'])->name('ad.index');
 Route::get('/show/ad/{ad}',[AdController::class,'show'])->name('ad.show');
 Route::get('/category/{category}',[AdController::class,'byCategory'])->name('ad.byCategory');
 
-Route::get('/revisor/index',[RevisorController::class,'index'])->name('revisor.index');
+Route::get('/revisor/index',[RevisorController::class,'index'])->middleware('isRevisor')->name('revisor.index');
+
+Route::patch('/accept/{ad}',[RevisorController::class,'accept'])->name('accept');
+Route::patch('/reject/{ad}',[RevisorController::class,'reject'])->name('reject');
+
+Route::get('/revisor/request',[RevisorController::class,'becomeRevisor'])->middleware('auth')->name('become.revisor');
+Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');

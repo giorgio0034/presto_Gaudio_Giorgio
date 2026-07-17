@@ -19,7 +19,6 @@ public function create(){
 public function store(Request $request){
 
 
-dd($request->all());
 //$title= $request->title;
 //$price= $request->price;
 //$description= $request->description;
@@ -43,7 +42,7 @@ dd($request->all());
     {
 
 
-        $ads=Ad::orderBy('created_at','desc')->paginate(6);
+        $ads=Ad::where('is_accepted',true)->orderBy('created_at','desc')->paginate(10);
         return view('ad.index', compact('ads'));
     }
 
@@ -52,7 +51,8 @@ dd($request->all());
     }
 
     public function byCategory(Category $category){
-        return view('ad.byCategory',['ads'=> $category->ads,'category'=> $category]);
+        $ads=$category->ads->where('is_accepted',true);
+        return view('ad.byCategory', compact('ad','category'));
     }
 
     /**

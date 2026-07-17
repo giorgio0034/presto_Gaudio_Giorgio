@@ -12,8 +12,9 @@
           <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('ad.index') }}">I miei annunci</a>
+          <a class="nav-link" href="{{ route('ad.index') }}">Tutti gli annunci</a>
         </li>
+
        @guest
         <li class="nav-item">
           <a class="nav-link" href="{{ route('register') }}">Registrati</a>
@@ -25,8 +26,18 @@
 
         @auth
 
+    @if(Auth::user()->is_revisor)
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ route('revisor.index') }}">Zona revisore</a>
+      <span
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ \App\Models\Ad::toBeRevisedCount() }}
+      </span>
 
-        <li class="nav-item">
+
+    </li>
+    @endif
+
+ <li class="nav-item">
           <a class="nav-link" href="#">Benvenut*{{ Auth::user()->name }}</a>
         </li>
         <li class="nav-item dropdown">
