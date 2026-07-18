@@ -3,6 +3,7 @@
   <div class="card-body">
     <h5 class="card-title">{{ $ad->title }}</h5>
     <p class="card-subtitle">{{ $ad->price }}€</p>
+    <p class="card-subtitle">{{ $ad->description }}</p>
     {{-- <p class="card-subtitle">{{ $ad->category->name }}</p> --}}
     <a href="{{ route('ad.show',compact('ad')) }}" class="btn btn-primary">Dettaglio</a>
      <a href="{{ route('ad.byCategory', ['category'=> $ad->category]) }}"

@@ -18,8 +18,14 @@ public function home(){
         return view('welcome', compact('ads'));
     }
 
+ public function searchAds (Request $request)
 
+    {
+        $query = $request->input('query');
+        $ads = Ad::search($query)->paginate(10);
+        return view('ad.searched', ['ads' => $ads, 'query' => $query]);
 
 
     }
 
+}

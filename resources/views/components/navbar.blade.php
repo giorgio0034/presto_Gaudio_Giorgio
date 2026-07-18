@@ -15,6 +15,10 @@
           <a class="nav-link" href="{{ route('ad.index') }}">Tutti gli annunci</a>
         </li>
 
+
+
+
+
        @guest
         <li class="nav-item">
           <a class="nav-link" href="{{ route('register') }}">Registrati</a>
@@ -23,6 +27,21 @@
           <a class="nav-link" href="{{ route('login') }}">Accedi</a>
         </li>
         @endguest
+
+        <form class="d-flex ms-auto" role="search" action="{{ route('ad.search') }}" method="GET">
+            <div class="input-group">
+            <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+                <button type="submit" class="input-group-text btn btn-outline-success"
+                    id="basic-addon2"> Search
+                </button>
+            </div>
+        </form>
+
+
+
+
+
+
 
         @auth
 
