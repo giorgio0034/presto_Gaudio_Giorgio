@@ -52,7 +52,7 @@ public function store(Request $request){
 
     public function byCategory(Category $category){
         $ads=$category->ads->where('is_accepted',true);
-        return view('ad.byCategory', compact('ad','category'));
+        return view('ad.byCategory', compact('ads','category'));
     }
 
     /**

@@ -12,10 +12,12 @@
           <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('ad.index') }}">Tutti gli annunci</a>
+          <a class="nav-link" href="{{ route('ad.index') }}">{{ __('ui.allAds') }}</a>
         </li>
 
-
+<x-_locale lang="it" />
+<x-_locale lang="uk" />
+<x-_locale lang="es" />
 
 
 

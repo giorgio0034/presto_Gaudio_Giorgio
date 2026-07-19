@@ -32,3 +32,4 @@ Route::patch('/reject/{ad}',[RevisorController::class,'reject'])->name('reject')
 Route::get('/revisor/request',[RevisorController::class,'becomeRevisor'])->middleware('auth')->name('become.revisor');
 Route::get('/make/revisor/{user}',[RevisorController::class,'makeRevisor'])->name('make.revisor');
 Route::get('/search/ad', [PublicController::class, 'searchAds'])->name('ad.search');
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

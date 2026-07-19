@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center text-center my-5">
         <div class="col-12">
-            <h1 class="display-1">Tutti gli annunci</h1>
+            <h1 class="display-1">{{ __('ui.allAds') }}</h1>
         </div>
     </div>
     <div class="row">
